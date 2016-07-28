@@ -9,8 +9,8 @@ RUN apt-get update \
     && apt-get install -y apt-transport-https \
     && echo "deb [arch=amd64] https://apt-mo.trafficmanager.net/repos/dotnet/ trusty main" > /etc/apt/sources.list.d/dotnetdev.list \
     && apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 \
-    && apt-get update \
-    && apt-get install -y dotnet-dev-$DOTNET_VERSION \
+    && apt-get update
+RUN apt-get install -y dotnet-dev-$DOTNET_VERSION \
     && apt-get -y autoremove \
     && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/*
