@@ -3,7 +3,7 @@ MAINTAINER Markus Mayer <ideploy@wlniao.com>
 
 RUN LIBUV_VERSION=1.9.1 \
 	&& apt-get update \
-	&& apt-get -y install vim-tiny curl autoconf automake build-essential libtool \
+	&& apt-get -y install git vim curl autoconf automake build-essential libtool \
 	&& curl -sSL https://github.com/libuv/libuv/archive/v${LIBUV_VERSION}.tar.gz | tar zxfv - -C /usr/local/src \
 	&& cd /usr/local/src/libuv-$LIBUV_VERSION \
 	&& sh autogen.sh && ./configure && make && make install \
