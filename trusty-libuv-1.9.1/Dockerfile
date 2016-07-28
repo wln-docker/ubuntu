@@ -1,6 +1,7 @@
 FROM ubuntu:trusty
 MAINTAINER Markus Mayer <ideploy@wlniao.com>
 
+RUN sh -c 'echo "deb [arch=amd64] http://archive.canonical.com/ubuntu/ maverick partner" > /etc/apt/sources.list.d/dotnetdev.list'
 RUN LIBUV_VERSION=1.9.1 \
 	&& apt-get update \
 	&& apt-get -y install git vim curl autoconf automake build-essential libtool \
