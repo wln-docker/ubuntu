@@ -2,7 +2,7 @@ FROM ideploy/ubuntu:trusty-libuv-1.9.1
 MAINTAINER WlniaoStudio <ideploy@wlniao.com>
 ENV WLN_STARTUP_ROOT /wln
 ENV WLN_LISTEN_PORT 5000
-ENV DOTNET_VERSION 1.0.0
+ENV DOTNET_VERSION 1.0.0-preview3-003215
 EXPOSE 5000
 
 RUN apt-get update \
@@ -11,9 +11,9 @@ RUN apt-get update \
     && apt-key adv --keyserver apt-mo.trafficmanager.net --recv-keys 417A0893 \
     && apt-get update \
     && apt-get install -y dotnet-dev-$DOTNET_VERSION \
-  	&& apt-get -y autoremove \
-	  && apt-get -y clean \
-	  && rm -rf /var/lib/apt/lists/*
+    && apt-get -y autoremove \
+    && apt-get -y clean \
+    && rm -rf /var/lib/apt/lists/*
 	
 	
 WORKDIR /wln
